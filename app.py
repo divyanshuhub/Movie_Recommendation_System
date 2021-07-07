@@ -21,7 +21,7 @@ def recommend_movies(movie):
         result=[]
         for i in range(len(lst)):
             a=lst[i][0]
-            result.append(df['movie_title'][a])
+            result.append(df['movie_titleO'][a])
         return result
 
 
