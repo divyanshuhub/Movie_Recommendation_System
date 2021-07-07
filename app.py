@@ -33,11 +33,12 @@ app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
 @app.route('/')
 @app.route('/home')
 def home():
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'img\movielib2.jpg')
+    #full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'img\movielib2.jpg')
 
-    return render_template('index.html', user_image =full_filename)
+    return render_template('index.html')
 @app.route('/predict',methods=["POST"])
 def predict():
+    #full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'img\movielib2.jpg')
     mov_name= request.form.get('movie')
     pred =recommend_movies(movie=mov_name)
     return render_template('index.html', prediction_text ="Recommend{}".format(pred), data=pred, len=len(pred))
