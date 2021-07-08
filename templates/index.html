@@ -73,7 +73,16 @@ body {
 <div class="container plan">
 <center>
     <h1> Movie Recommendation System</h1>
+<style>
+h1 {
+  background-color: linen;
+}
 
+h1 {
+  color: maroon;
+  margin-left: 40px;
+}
+</style>
 <form action="{{ url_for('predict') }} " method ='POST' >
     <input type="text" name="movie" placeholder ="Enter Movie Name"  required/>
     </br></br>
@@ -95,6 +104,17 @@ body {
     <ul>
         {% for keys in data %}
         <li>{{keys}}</li>
+        <style>
+        li {
+             background-color: linen;
+            }
+
+        li {
+              color: maroon;
+             margin-left: 40px;
+            }
+        </style>
+	<li>{{keys}}</li>
         {% endfor %}
     </ul>
     {% endif %}
