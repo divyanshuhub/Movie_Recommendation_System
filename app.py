@@ -17,7 +17,7 @@ def recommend_movies(movie):
         i=df.loc[df['movie_title'] == movie ].index[0]
         lst =list(enumerate(similar[i]))
         lst =sorted(lst , key =lambda x:x[1] ,reverse =True)
-        lst=lst[1:11]
+        lst=lst[1:15]
         result=[]
         for i in range(len(lst)):
             a=lst[i][0]
@@ -34,7 +34,7 @@ app.config['UPLOAD_FOLDER'] = PEOPLE_FOLDER
 @app.route('/home')
 def home():
     #full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'img\movielib2.jpg')
-
+    #return render_template('index.html', user_image =full_filename)
     return render_template('index.html')
 @app.route('/predict',methods=["POST"])
 def predict():
